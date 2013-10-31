@@ -1,6 +1,8 @@
 apply plugin: 'groovy'
 apply plugin: 'idea'
 
+apply plugin: 'findbugs'
+
 sourceCompatibility = targetCompatibility = 1.7
 
 tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
