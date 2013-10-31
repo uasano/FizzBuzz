@@ -1,0 +1,18 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+sourceCompatibility = targetCompatibility = 1.7
+
+tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.0.5'
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+}
+
+task quickStart << {
+    sourceSets*.allSource*.srcDirs.flatten().each { it.mkdirs() }
+}
