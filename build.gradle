@@ -7,6 +7,10 @@ sourceCompatibility = targetCompatibility = 1.7
 
 tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
 
+buildscript {
+    apply from: 'https://github.com/valkolovos/gradle_cobertura/raw/master/repo/gradle_cobertura/gradle_cobertura/1.2.1/coberturainit.gradle'
+}
+
 repositories {
     mavenCentral()
 }
@@ -17,4 +21,8 @@ dependencies {
 
 task quickStart << {
     sourceSets*.allSource*.srcDirs.flatten().each { it.mkdirs() }
+}
+test {
+    jvmArgs '-XX:-UseSplitVerifier'
+    exclude '**/*$*'
 }
