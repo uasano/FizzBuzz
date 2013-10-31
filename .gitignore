@@ -1,7 +1,9 @@
 *.class
 out/*
 .gradle/*
-
+*.iml
+*.ipr
+*.iws
 
 # Package Files #
 *.jar
