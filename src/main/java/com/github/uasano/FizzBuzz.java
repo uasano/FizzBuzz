@@ -1,4 +1,4 @@
-package com.github.uasano
+package com.github.uasano;
 
 /**
  * FizzBuzzの実装クラス.
